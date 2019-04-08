@@ -1,8 +1,11 @@
 import mermaid from 'mermaid'
 
+
 const mermaidChart = (code) => {
   try {
-    mermaid.parse(code)
+    var needsUniqueId = "render" + (Math.floor(Math.random() * 10000)).toString();
+    mermaid.mermaidAPI.render(needsUniqueId, code, (sc) => {code=sc} )
+    console.log(code);
     return `<div class="mermaid">${code}</div>`
   } catch ({ str, hash }) {
     return `<pre>${str}</pre>`

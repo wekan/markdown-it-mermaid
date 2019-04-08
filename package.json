@@ -1,18 +1,29 @@
 {
-  "name": "markdown-it-mermaid",
-  "version": "0.2.5",
-  "description": "Mermaid plugin for markdown-it.",
-  "main": "dist/index.js",
+  "name": "@liradb2000/markdown-it-mermaid",
+  "version": "0.3.0",
+  "description": "Forked Package markdown-it-mermaid (Newely).",
+  "main": "src/index.js",
   "scripts": {
-    "build": "webpack --progress --color",
-    "build:watch": "yarn build --watch",
-    "release": "yarn build -p",
-    "test": "node -r babel-register test/index.js",
-    "upgrade": "yarn-upgrade-all"
+    "test": "node -r babel-register test/index.js"
   },
-  "repository": "git@github.com:tylingsoft/markdown-it-mermaid.git",
-  "author": "Tyler Long <tyler4long@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liradb2000/markdown-it-mermaid.git"
+  },
+  "keywords": [
+    "markdown-it-plugin",
+    "markdown-it",
+    "markdown",
+    "mermaid",
+    "flowchart",
+    "sequence"
+  ],
+  "author": "DB KIM <https://github.com/liradb2000>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liradb2000/markdown-it-mermaid/issues"
+  },
+  "homepage": "https://github.com/liradb2000/markdown-it-mermaid#readme",
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -24,6 +35,6 @@
     "yarn-upgrade-all": "^0.2.0"
   },
   "dependencies": {
-    "mermaid": "^7.1.2"
+    "mermaid": "^8.0.0"
   }
 }
