@@ -1,55 +1,43 @@
-import mermaid from 'mermaid'
+import Mermaid from 'mermaid'
 
 
-const mermaidChart = (code) => {
+const MermaidChart = code => {
   try {
     var needsUniqueId = "render" + (Math.floor(Math.random() * 10000)).toString();
-    mermaid.mermaidAPI.render(needsUniqueId, code, (sc) => {code=sc} )
-    console.log(code);
+    Mermaid.mermaidAPI.render(needsUniqueId, code, sc => {code=sc})
     return `<div class="mermaid">${code}</div>`
   } catch ({ str, hash }) {
     return `<pre>${str}</pre>`
   }
 }
 
-const MermaidPlugin = (md) => {
-  md.mermaid = mermaid
-  mermaid.loadPreferences = (preferenceStore) => {
-    let mermaidTheme = preferenceStore.get('mermaid-theme')
-    if (mermaidTheme === undefined) {
-      mermaidTheme = 'default'
-    }
-    let ganttAxisFormat = preferenceStore.get('gantt-axis-format')
-    if (ganttAxisFormat === undefined) {
-      ganttAxisFormat = '%Y-%m-%d'
-    }
-    mermaid.initialize({
-      theme: mermaidTheme,
-      gantt: { axisFormatter: [
-        [ganttAxisFormat, (d) => {
-          return d.getDay() === 1
-        }]
-      ]}
-    })
-    return {
-      'mermaid-theme': mermaidTheme,
-      'gantt-axis-format': ganttAxisFormat
-    }
-  }
+const MermaidPlugIn = (md, opts)=> {
+  Mermaid.initialize({...MermaidPlugIn.default, ...opts});
 
-  const temp = md.renderer.rules.fence.bind(md.renderer.rules)
-  md.renderer.rules.fence = (tokens, idx, options, env, slf) => {
+  const defaultRenderer = md.renderer.rules.fence.bind(md.renderer.rules);
+
+  md.renderer.rules.fence=(tokens, idx, opts, env, self)=>{
     const token = tokens[idx]
-    const code = token.content.trim()
-    if (token.info === 'mermaid') {
-      return mermaidChart(code)
+    const code = `${token.info} \n ${token.content.trim()}`
+    console.log(code);
+    if (token.info === 'mermaid' || token.info === 'gantt' || token.info === 'sequenceDiagram' || token.info.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
+      return MermaidChart(code)
     }
-    const firstLine = code.split(/\n/)[0].trim()
-    if (firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
-      return mermaidChart(code)
-    }
-    return temp(tokens, idx, options, env, slf)
+    // const firstLine = code.split(/\n/)[0].trim()
+    // if (firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
+    //   return mermaidChart(code)
+    // }
+    return defaultRenderer(tokens, idx, options, env, slf)
   }
 }
 
-export default MermaidPlugin
+MermaidPlugIn.default={
+  startOnLoad: false,
+    theme: "default",
+    flowchart:{
+      htmlLabels: false,
+      useMaxWidth: true,
+    }
+}
+
+export default MermaidPlugIn
