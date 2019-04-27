@@ -26,7 +26,7 @@ const MermaidPlugIn = (md, opts)=> {
     // if (firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
     //   return mermaidChart(code)
     // }
-    return defaultRenderer(tokens, idx, options, env, slf)
+    return defaultRenderer(tokens, idx, opts, env, slf)
   }
 }
 
