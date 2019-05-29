@@ -1,12 +1,17 @@
+# !Important
+### Strongly recommend using Dompurify or any library that has escape Scripts Func.  
+ https://www.npmjs.com/advisories/751  
+
+
 # markdown-it-mermaid
 
-Mermaid plugin for markdown-it.
+Mermaid plugin for markdown-it.(Forked)
 
 
 ## Installation
 
 ```
-yarn install markdown-it-mermaid
+yarn install @liradb2000/markdown-it-mermaid
 ```
 
 
@@ -17,8 +22,7 @@ import markdownIt from 'markdown-it'
 import markdownItMermaid from 'markdown-it-mermaid'
 const mdi = markdownIt()
 mdi.use(markdownItMermaid)
-mdi.render(`\`\`\`mermaid
-graph TD
+mdi.render(`\`\`\`graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
     C -->|One| D[Laptop]
@@ -30,25 +34,27 @@ graph TD
 ### Customize mermaid
 
 ```js
-mdi.mermaid.loadPreferences({
-  get: key => {
-    if (key === 'mermaid-theme') {
-      return 'forest'
-    } else if (key === 'gantt-axis-format') {
-      return '%Y/%m/%d'
-    } else {
-      return undefined
+import MarkdownIt from 'markdown-it';
+import MarkdownItKatex from '@liradb2000/markdown-it-katex';
+
+var md = MarkdownIt({
+        html: false,
+        linkify: true,
+        typographer: true,
+        breaks: true,
+        xhtmlOut: false,
+    });
+    
+md.use(MarkdownItMermaid,{
+  startOnLoad: false,
+    theme: "default",
+    flowchart:{
+      htmlLabels: false,
+      useMaxWidth: true,
     }
-  }
+    ...or any options
 })
 ```
-
-You can `loadPreferences` from any preferences store as long as it supports the `get` method. For example, you can use `js-cookie` library as a preferences store. Or you can write your own preferences store to achieve more flexibility.
-
-`mdi.mermaid.loadPreferences` not only applies the preferences, it also return the preferences loaded. Just in case you need to access the loaded preferences.
-
-`mdi.mermaid.loadPreferences` could be invoked multiple times. And the preferences applied later will override ones applied earlier.
-
 
 ## Development
 
@@ -71,6 +77,4 @@ yarn release && npm publish
 ```
 
 
-## Todo
 
-`gantt-axis-format` should support large date ranges
