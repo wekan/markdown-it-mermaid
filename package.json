@@ -1,6 +1,6 @@
 {
   "name": "@liradb2000/markdown-it-mermaid",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Forked Package markdown-it-mermaid (Newely).",
   "main": "src/index.js",
   "scripts": {
@@ -35,6 +35,6 @@
     "yarn-upgrade-all": "^0.2.0"
   },
   "dependencies": {
-    "mermaid": "^8.0.0"
+    "mermaid": "^8.1.0"
   }
 }
