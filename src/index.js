@@ -12,7 +12,7 @@ const MermaidChart = code => {
 }
 
 const MermaidPlugIn = (md, opts)=> {
-  Mermaid.initialize({...MermaidPlugIn.default, ...opts});
+  Mermaid.initialize(Object.assign(MermaidPlugIn.default, opts));
 
   const defaultRenderer = md.renderer.rules.fence.bind(md.renderer.rules);
 
