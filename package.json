@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/liradb2000/markdown-it-mermaid#readme",
   "devDependencies": {
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.1",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
