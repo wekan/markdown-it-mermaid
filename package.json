@@ -1,6 +1,6 @@
 {
   "name": "@liradb2000/markdown-it-mermaid",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "description": "Forked Package markdown-it-mermaid (Newely).",
   "main": "src/index.js",
   "scripts": {
