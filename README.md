@@ -20,7 +20,7 @@ yarn install @liradb2000/markdown-it-mermaid
 
 ```js
 import markdownIt from "markdown-it";
-import markdownItMermaid from "markdown-it-mermaid";
+import markdownItMermaid from "@liradb2000/markdown-it-mermaid";
 const mdi = markdownIt();
 mdi.use(markdownItMermaid);
 mdi.render(`\`\`\`graph TD
@@ -36,7 +36,7 @@ mdi.render(`\`\`\`graph TD
 
 ```js
 import MarkdownIt from 'markdown-it';
-import MarkdownItKatex from '@liradb2000/markdown-it-katex';
+import MarkdownItKatex from '@liradb2000/markdown-it-mermaid';
 
 var md = MarkdownIt({
         html: false,
