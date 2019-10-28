@@ -1,12 +1,14 @@
-# !Important
-### Strongly recommend using Dompurify or any library that has escape Scripts Func.  
- https://www.npmjs.com/advisories/751  
+# Update Mermaid 8.4!
 
+-   New diagrams (classDiagram)
+-   Support gitGraph
+-   Support securityLevel options
+
+more details : http://knsv.github.io/mermaid/#/README?id=new-diagrams-in-84
 
 # markdown-it-mermaid
 
 Mermaid plugin for markdown-it.(Forked)
-
 
 ## Installation
 
@@ -14,21 +16,20 @@ Mermaid plugin for markdown-it.(Forked)
 yarn install @liradb2000/markdown-it-mermaid
 ```
 
-
 ## Usage
 
 ```js
-import markdownIt from 'markdown-it'
-import markdownItMermaid from 'markdown-it-mermaid'
-const mdi = markdownIt()
-mdi.use(markdownItMermaid)
+import markdownIt from "markdown-it";
+import markdownItMermaid from "markdown-it-mermaid";
+const mdi = markdownIt();
+mdi.use(markdownItMermaid);
 mdi.render(`\`\`\`graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
     C -->|Three| F[Car]
-\`\`\``)
+\`\`\``);
 ```
 
 ### Customize mermaid
@@ -44,15 +45,16 @@ var md = MarkdownIt({
         breaks: true,
         xhtmlOut: false,
     });
-    
+
 md.use(MarkdownItMermaid,{
   startOnLoad: false,
-    theme: "default",
-    flowchart:{
-      htmlLabels: false,
-      useMaxWidth: true,
-    }
-    ...or any options
+  securityLevel: true,
+  theme: "default",
+  flowchart:{
+    htmlLabels: false,
+    useMaxWidth: true,
+  }
+  ...or any options
 })
 ```
 
@@ -75,6 +77,3 @@ yarn test
 ```
 yarn release && npm publish
 ```
-
-
-

@@ -8,8 +8,7 @@ mdi.use(markdownItMermaid);
 assert(mdi.render('# Hello world').trim() === '<h1>Hello world</h1>', '# Hello world')
 assert(mdi.render('Hello world').trim() === '<p>Hello world</p>', 'Hello world')
 
-console.log(mdi.render(`\`\`\`mermaid
-graph TD
+console.log(mdi.render(`\`\`\`graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
     C -->|One| D[Laptop]
