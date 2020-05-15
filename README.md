@@ -1,7 +1,7 @@
 # Update Mermaid 8.4!
 
 -   New diagrams (classDiagram)
--   Support gitGraph
+-   Support gitGraph, pie, stateDiagram and erDiagram (@nojaja)
 -   Support securityLevel options
 
 more details : http://knsv.github.io/mermaid/#/README?id=new-diagrams-in-84
