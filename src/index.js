@@ -19,7 +19,7 @@ const MermaidPlugIn = (md, opts)=> {
   md.renderer.rules.fence=(tokens, idx, opts, env, self)=>{
     const token = tokens[idx]
     const code = `${token.info} \n ${token.content.trim()}`
-    if (token.info === 'mermaid' || token.info === 'gantt' || token.info === 'sequenceDiagram' || token.info === 'classDiagram' || token.info === 'gitGraph' || token.info.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
+    if (token.info === 'mermaid' || token.info === 'gantt' || token.info === 'sequenceDiagram' || token.info === 'classDiagram' || token.info === 'gitGraph' || token.info.match(/^pie (.*)?$/) || token.info === 'stateDiagram' || token.info === 'erDiagram' || token.info.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
       return MermaidChart(code)
     }
     // const firstLine = code.split(/\n/)[0].trim()
