@@ -1,12 +1,15 @@
 # Update Mermaid 8.5!
 
--   New diagrams (classDiagram)
--   Support gitGraph, pie, stateDiagram and erDiagram (@nojaja)
+-   Support all mermaid diagrams
 -   Support securityLevel options
 
 # markdown-it-mermaid
 
-Mermaid plugin for markdown-it.(Forked)
+Mermaid plugin for markdown-it. (Forked from iradb2000/markdown-it-mermaid)
+
+This version uses a different syntax to support mermaid.  The syntax
+uses the syntax highlighting notation by putting the word `mermaid`
+directly after the opening marker.
 
 ## Installation
 
@@ -21,14 +24,21 @@ import markdownIt from "markdown-it";
 import markdownItMermaid from "@DatatracCorporation/markdown-it-mermaid";
 const mdi = markdownIt();
 mdi.use(markdownItMermaid);
-mdi.render(`\`\`\`graph TD
+mdi.render(`~~~mermaid
+  graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
     C -->|One| D[Laptop]
     C -->|Two| E[iPhone]
     C -->|Three| F[Car]
-\`\`\``);
+~~~`);
 ```
+
+The word `mermaid` after the fence code block opening indicates that the
+rest of the fenced block should be passed to mermaid for processing.
+This example used the `~~~` fence marker since the multi-line string
+in javascript is the same character,
+but either `~~~` or ` ``` ` works.
 
 ### Customize mermaid
 
