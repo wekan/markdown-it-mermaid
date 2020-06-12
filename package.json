@@ -1,14 +1,11 @@
 {
-  "name": "@liradb2000/markdown-it-mermaid",
-  "version": "0.3.7",
-  "description": "Forked Package markdown-it-mermaid (Newely).",
+  "name": "@DatatracCorporation/markdown-it-mermaid",
+  "version": "0.4.0",
+  "description": "Plugin to render mermaid diagrams in markdown-it",
   "main": "src/index.js",
-  "scripts": {
-    "test": "node -r babel-register test/index.js"
-  },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liradb2000/markdown-it-mermaid.git"
+    "url": "git+https://github.com/DatatracCorporation/markdown-it-mermaid.git"
   },
   "keywords": [
     "markdown-it-plugin",
@@ -18,24 +15,16 @@
     "flowchart",
     "sequence"
   ],
-  "author": "DB KIM <https://github.com/liradb2000>",
+  "author": "Datatrac Corporation",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liradb2000/markdown-it-mermaid/issues"
+    "url": "https://github.com/DatatracCorporation/markdown-it-mermaid/issues"
   },
-  "homepage": "https://github.com/liradb2000/markdown-it-mermaid#readme",
+  "homepage": "https://github.com/DatatracCorporation/markdown-it-mermaid#readme",
   "devDependencies": {
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.1",
-    "markdown-it": "^8.4.0",
-    "standard": "^10.0.3",
-    "webpack": "^3.10.0",
-    "webpack-node-externals": "^1.6.0",
-    "yarn-upgrade-all": "^0.2.0"
+    "markdown-it": "^11.0.0"
   },
   "dependencies": {
-    "mermaid": "^8.4.0"
+    "mermaid": "^8.5.2"
   }
 }
