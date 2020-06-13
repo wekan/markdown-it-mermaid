@@ -1,15 +1,14 @@
-# Update Mermaid 8.5!
-
--   Support all mermaid diagrams
--   Support securityLevel options
-
 # markdown-it-mermaid
 
 Mermaid plugin for markdown-it. (Forked from iradb2000/markdown-it-mermaid)
 
+- Update Mermaid to 8.5!
+- Support all mermaid diagrams
+- Add external title support
+
 This version uses a different syntax to support mermaid.  The syntax
 uses the syntax highlighting notation by putting the word `mermaid`
-directly after the opening marker.
+directly after the opening fence marker.
 
 ## Installation
 
@@ -24,7 +23,7 @@ import markdownIt from "markdown-it";
 import markdownItMermaid from "@DatatracCorporation/markdown-it-mermaid";
 const mdi = markdownIt();
 mdi.use(markdownItMermaid);
-mdi.render(`~~~mermaid
+mdi.render(`~~~mermaid optional title goes here
   graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
@@ -39,6 +38,39 @@ rest of the fenced block should be passed to mermaid for processing.
 This example used the `~~~` fence marker since the multi-line string
 in javascript is the same character,
 but either `~~~` or ` ``` ` works.
+
+## Titles
+
+Mermaid does not support titles on the diagrams today.  We have added an external title
+that you can use.  Include the title on the code fence line after the word `mermaid` and
+it will be rendered as a div inside the parent div as a sibling to the svg image.  The
+title element has a class of `mermaid-title` so you can style the title to fit your
+app.
+
+We use:
+
+~~~css
+/* image container */
+div.mermaid {
+    width: fit-content;
+}
+
+/* image title */
+.mermaid-title {
+    width: fit-content;
+    margin: auto;
+    font-weight: 900;
+    font-size: 2em;
+    color: white;
+    padding-bottom: 0.5em;
+}
+
+/* image itself */
+.mermaid > svg {
+    margin: auto;
+    display: block;
+}
+~~~
 
 ### Customize mermaid
 
