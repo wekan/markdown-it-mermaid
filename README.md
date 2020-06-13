@@ -108,5 +108,5 @@ apis).  At some point in the future, we might go with a headless browser.
 ### Distribution
 
 ```
-npm release && npm publish
+npm version <newver> && npm publish
 ```
