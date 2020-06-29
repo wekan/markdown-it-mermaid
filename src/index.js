@@ -1,4 +1,5 @@
 import Mermaid from 'mermaid';
+import Murmur from './murmurhash3_gc.js';
 
 
 const htmlEntities = (str) =>
@@ -7,7 +8,7 @@ const htmlEntities = (str) =>
 
 const MermaidChart = (code, title='') => {
   try {
-    var needsUniqueId = "render" + (Math.floor(Math.random() * 10000)).toString();
+    var needsUniqueId = "render" + Murmur(code, 42).toString();
     Mermaid.mermaidAPI.render(needsUniqueId, code, sc => {code=sc});
     if (title && String(title).length) {
         title = `<div class="mermaid-title">${htmlEntities(title)}</div>`;
