@@ -29,13 +29,13 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
-    "markdown-it": "^8.4.0",
+    "markdown-it": "^8.4.2",
     "standard": "^10.0.3",
-    "webpack": "^3.10.0",
+    "webpack": "^4.43.0",
     "webpack-node-externals": "^1.6.0",
     "yarn-upgrade-all": "^0.2.0"
   },
   "dependencies": {
-    "mermaid": "^8.4.0"
+    "mermaid": "^8.6.0"
   }
 }
