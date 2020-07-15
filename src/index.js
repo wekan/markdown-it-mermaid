@@ -1,36 +1,47 @@
-import Mermaid from 'mermaid'
+import Mermaid from 'mermaid';
+import Murmur from './murmurhash3_gc.js';
 
 
-const MermaidChart = code => {
+const htmlEntities = (str) =>
+    String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+
+
+const MermaidChart = (code, title='') => {
   try {
-    var needsUniqueId = "render" + (Math.floor(Math.random() * 10000)).toString();
-    Mermaid.mermaidAPI.render(needsUniqueId, code, sc => {code=sc})
-    return `<div class="mermaid">${code}</div>`
-  } catch ({ str, hash }) {
-    return `<pre>${str}</pre>`
+    var needsUniqueId = "render" + Murmur(code, 42).toString();
+    Mermaid.mermaidAPI.render(needsUniqueId, code, sc => {code=sc});
+    if (title && String(title).length) {
+        title = `<div class="mermaid-title">${htmlEntities(title)}</div>`;
+    }
+    return `<div class="mermaid">${title}${code}</div>`;
+  } catch (err) {
+    return `<pre>${htmlEntities(err.name)}: ${htmlEntities(err.message)}</pre>`;
   }
 }
 
-const MermaidPlugIn = (md, opts)=> {
+
+const MermaidPlugIn = (md, opts) => {
   Mermaid.initialize(Object.assign(MermaidPlugIn.default, opts));
 
   const defaultRenderer = md.renderer.rules.fence.bind(md.renderer.rules);
 
-  md.renderer.rules.fence=(tokens, idx, opts, env, self)=>{
-    const token = tokens[idx]
-    const code = `${token.info} \n ${token.content.trim()}`
-    if (token.info === 'mermaid' || token.info === 'gantt' || token.info === 'sequenceDiagram' || token.info === 'classDiagram' || token.info === 'gitGraph' || token.info.match(/^pie (.*)?$/) || token.info === 'stateDiagram' || token.info === 'erDiagram' || token.info.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
-      return MermaidChart(code)
+  md.renderer.rules.fence = (tokens, idx, opts, env, self) => {
+    const token = tokens[idx];
+    const code = token.content.trim();
+    if (token.info.startsWith('mermaid')) {
+      let title;
+      const spc = token.info.indexOf(' ', 7);
+      if (spc > 0) {
+          title = token.info.slice(spc + 1);
+      }
+      return MermaidChart(code, title);
     }
-    // const firstLine = code.split(/\n/)[0].trim()
-    // if (firstLine === 'gantt' || firstLine === 'sequenceDiagram' || firstLine.match(/^graph (?:TB|BT|RL|LR|TD);?$/)) {
-    //   return mermaidChart(code)
-    // }
-    return defaultRenderer(tokens, idx, opts, env, self)
+    return defaultRenderer(tokens, idx, opts, env, self);
   }
 }
 
-MermaidPlugIn.default={
+
+MermaidPlugIn.default = {
   startOnLoad: false,
   securityLevel: 'true',
     theme: "default",
@@ -38,6 +49,6 @@ MermaidPlugIn.default={
       htmlLabels: false,
       useMaxWidth: true,
     }
-}
+};
 
-export default MermaidPlugIn
+export default MermaidPlugIn;
