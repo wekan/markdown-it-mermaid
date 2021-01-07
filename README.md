@@ -1,13 +1,9 @@
-# Update Mermaid 8.6!
+# Update Mermaid 8.8.4!
 
--   New diagrams (classDiagram)
--   Support All grpahs (Thx @DatatracCorporation, @nojaja)
--   Support securityLevel options
--   Use stable id for mermaid(@DatatracCorporation)
+-   Support Mermaid 8.8.4 New Diagrams (https://mermaid-js.github.io/mermaid/#/)
+-   Remove the security issues
 
-more details : http://knsv.github.io/mermaid/#/README?id=new-diagrams-in-84
-
-# ✔Migrate v3.x to v4.x
+# ✔Migrate v0.3.x to v0.4.x
 Change the token (like grpah TD, sequenceDiagram or something) to "mermaid"!
 ```js
 - mdi.render(`\'\'\'graph TD
@@ -98,3 +94,7 @@ npm version <newver> && npm publish
 ## Alternative packages
 - https://github.com/DatatracCorporation/markdown-it-mermaid
   - (Recommend) Supports title and more rich funcs!
+
+## Thanks to 
+@DatatracCorporation
+@nojaja
