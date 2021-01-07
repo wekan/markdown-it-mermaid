@@ -7,6 +7,20 @@
 
 more details : http://knsv.github.io/mermaid/#/README?id=new-diagrams-in-84
 
+# ✔Migrate v3.x to v4.x
+Change the token (like grpah TD, sequenceDiagram or something) to "mermaid"!
+```js
+- mdi.render(`\'\'\'graph TD
++ mdi.render(`\'\'\'mermaid
++  graph TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[Car]
+\`\`\``);
+```
+
 # markdown-it-mermaid
 
 Mermaid plugin for markdown-it.(Forked)
@@ -24,7 +38,7 @@ import markdownIt from "markdown-it";
 import markdownItMermaid from "@liradb2000/markdown-it-mermaid";
 const mdi = markdownIt();
 mdi.use(markdownItMermaid);
-mdi.render(`~~~mermaid optional title goes here
+mdi.render(`~~~mermaid
   graph TD
     A[Christmas] -->|Get money| B(Go shopping)
     B --> C{Let me think}
