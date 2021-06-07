@@ -1,13 +1,13 @@
 {
   "name": "@liradb2000/markdown-it-mermaid",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Forked Package markdown-it-mermaid (Newely).",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --progress --color",
     "build:watch": "npm build --watch",
     "release": "npm build -p",
-    "test": "node -r babel-register test/index.js"
+    "test": "node -r @babel/register test/index.js"
   },
   "repository": {
     "type": "git",
@@ -32,6 +32,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-es2016": "^7.0.0-beta.53",
+    "@babel/register": "^7.13.16",
     "babel-loader": "^8.1.0",
     "markdown-it": "^8.4.2",
     "standard": "^10.0.3",
@@ -40,7 +41,7 @@
     "webpack-node-externals": "^2.5.0"
   },
   "dependencies": {
-    "mermaid": "^8.8.4",
-    "npm": "^7.3.0"
+    "mermaid": "^8.10.2",
+    "npm": "^7.16.0"
   }
 }
