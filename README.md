@@ -1,25 +1,12 @@
-# Update Mermaid 8.8.4!
-
--   Support Mermaid 8.8.4 New Diagrams (https://mermaid-js.github.io/mermaid/#/)
--   Remove the security issues
-
-# ✔Migrate v0.3.x to v0.4.x
-Change the token (like grpah TD, sequenceDiagram or something) to "mermaid"!
-```js
-- mdi.render(`\'\'\'graph TD
-+ mdi.render(`\'\'\'mermaid
-+  graph TD
-    A[Christmas] -->|Get money| B(Go shopping)
-    B --> C{Let me think}
-    C -->|One| D[Laptop]
-    C -->|Two| E[iPhone]
-    C -->|Three| F[Car]
-\`\`\``);
-```
-
-# markdown-it-mermaid
-
 Mermaid plugin for markdown-it.(Forked)
+
+## New Feature in 0.4.3
+
+-   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.10.2
+-   [Add "dictionary" option](https://github.com/liradb2000/markdown-it-mermaid#customize-mermaid)
+    -   Customiable 'token' ( default: 'mermaid' )
+    -   Replacable keywords like 'graph', 'sequenceDiagram'
+    -   and more...
 
 ## Installation
 
@@ -50,8 +37,7 @@ This example used the `~~~` fence marker since the multi-line string
 in javascript is the same character,
 but either `~~~` or ` ``` ` works.
 
-
-### Customize mermaid
+## Customize mermaid
 
 ```js
 import MarkdownIt from 'markdown-it';
@@ -72,29 +58,99 @@ md.use(MarkdownItMermaid,{
   flowchart:{
     htmlLabels: false,
     useMaxWidth: true,
+  },
+  dictionary:{
+    token: "mermaid",
+    graph:"graph",
+    sequenceDiagram: "sequenceDiagram",
   }
   ...or any options
 })
 ```
 
-## Development
+### Dictionary option (New ver. 0.4.3)
 
-### Test
-
-At this time, there are no unit tests since mermaid has to run in a
-browser (uses document apis).  At some point in the future, we might go
-with a headless browser.
-
-### Distribution
-
+````
+```mermaid (<- token)
+graph TD (<- Replacable)
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[Car]
 ```
-npm version <newver> && npm publish
+````
+
+-   Example  
+If you setup like below,
+```javascript
+md.use(MarkdownItMermaid,{
+  ...,
+  dictionary:{
+    token: "diagram",
+    gra:"graph",
+    seq:"sequenceDiagram",
+    seqDiagram: "sequenceDiagram",
+  }
+  ...or any options
+})
+```
+
+you can use like
+````
+```diagram
+gra TD 
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[Car]
+```
+
+or
+
+```diagram
+seq
+    participant John
+    participant Alice
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+```
+
+or
+
+```diagram
+seqDiagram
+    participant John
+    participant Alice
+    Alice->>John: Hello John, how are you?
+    John-->>Alice: Great!
+```
+
+````
+
+## ✔Migrate v0.3.x to v0.4.x
+
+Change the token (like grpah TD, sequenceDiagram or something) to "mermaid"!
+
+```js
+- mdi.render(`\`\`\`graph TD
++ mdi.render(`\`\`\`mermaid
++  graph TD
+    A[Christmas] -->|Get money| B(Go shopping)
+    B --> C{Let me think}
+    C -->|One| D[Laptop]
+    C -->|Two| E[iPhone]
+    C -->|Three| F[Car]
+\`\`\``);
 ```
 
 ## Alternative packages
-- https://github.com/DatatracCorporation/markdown-it-mermaid
-  - (Recommend) Supports title and more rich funcs!
 
-## Thanks to 
+-   https://github.com/DatatracCorporation/markdown-it-mermaid
+    -   (Recommend) Supports title and more rich funcs!
+
+## Thanks to
+
 @DatatracCorporation
 @nojaja
