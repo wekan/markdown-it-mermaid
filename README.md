@@ -4,7 +4,7 @@ Mermaid plugin for markdown-it.(Forked)
 
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.10.2
 -   [Add "dictionary" option](https://github.com/liradb2000/markdown-it-mermaid#customize-mermaid)
-    -   Customiable 'token' ( default: 'mermaid' )
+    -   Customizable 'token' ( default: 'mermaid' )
     -   Replacable keywords like 'graph', 'sequenceDiagram'
     -   and more...
 
