@@ -1,6 +1,6 @@
 {
   "name": "@liradb2000/markdown-it-mermaid",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Forked Package markdown-it-mermaid (Newely).",
   "main": "dist/index.js",
   "scripts": {
@@ -41,7 +41,7 @@
     "webpack-node-externals": "^2.5.0"
   },
   "dependencies": {
-    "mermaid": "^8.10.2",
-    "npm": "^7.16.0"
+    "mermaid": "^8.13.0",
+    "npm": "^7.24.1"
   }
 }
