@@ -1,5 +1,9 @@
+# 0.5.0
+-   [Updated dependencies](https://github.com/wekan/markdown-it-mermaid/commit/e5ef26d1a3e8e99c1877dc83e755bf4f71927a00).
+
 # 0.4.4
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.13.0
+
 # 0.4.3
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.10.2
 -   [Add "dictionary" option](https://github.com/liradb2000/markdown-it-mermaid#customize-mermaid)
