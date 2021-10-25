@@ -1,7 +1,7 @@
 {
-  "name": "@liradb2000/markdown-it-mermaid",
-  "version": "0.4.4",
-  "description": "Forked Package markdown-it-mermaid (Newely).",
+  "name": "@wekanteam/markdown-it-mermaid",
+  "version": "0.5.0",
+  "description": "Forked Package markdown-it-mermaid (New).",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --progress --color",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/liradb2000/markdown-it-mermaid.git"
+    "url": "git+https://github.com/wekan/markdown-it-mermaid.git"
   },
   "keywords": [
     "markdown-it-plugin",
@@ -21,27 +21,23 @@
     "flowchart",
     "sequence"
   ],
-  "author": "DB KIM <https://github.com/liradb2000>",
+  "author": "xet7 <https://github.com/xet7>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liradb2000/markdown-it-mermaid/issues"
+    "url": "https://github.com/wekan/markdown-it-mermaid/issues"
   },
-  "homepage": "https://github.com/liradb2000/markdown-it-mermaid#readme",
+  "homepage": "https://github.com/wekan/markdown-it-mermaid#readme",
   "devDependencies": {
-    "@babel/core": "^7.10.5",
-    "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
-    "@babel/preset-env": "^7.10.4",
-    "@babel/preset-es2016": "^7.0.0-beta.53",
-    "@babel/register": "^7.13.16",
-    "babel-loader": "^8.1.0",
-    "markdown-it": "^8.4.2",
-    "standard": "^10.0.3",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12",
-    "webpack-node-externals": "^2.5.0"
+    "@babel/core": "^7.15.8",
+    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/register": "^7.15.3",
+    "acorn": "^8.5.0",
+    "markdown-it": "^12.2.0",
+    "standard": "^16.0.4"
   },
   "dependencies": {
-    "mermaid": "^8.13.0",
-    "npm": "^7.24.1"
+    "@wekanteam/cli-table3": "^0.7.0",
+    "mermaid": "^8.13.3"
   }
 }
