@@ -1,3 +1,10 @@
+# 0.5.1
+-   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.13.6
+-   Update [@wekanteam/cli-table3](https://github.com/wekan/cli-table3/) 0.7.1
+-   Deleted devDependencies.
+# 0.5.0
+-   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.13.3
+-   Update [@wekanteam/cli-table3](https://github.com/wekan/cli-table3/) 0.7.0
 # 0.4.4
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.13.0
 # 0.4.3

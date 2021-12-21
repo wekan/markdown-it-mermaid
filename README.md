@@ -1,19 +1,16 @@
 Mermaid plugin for markdown-it.(Forked)
 
-## 0.4.4
--   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.13.0
-
 ## Installation
 
 ```
-npm install @liradb2000/markdown-it-mermaid
+npm install @wekanteam/markdown-it-mermaid
 ```
 
 ## Usage
 
 ```js
 import markdownIt from "markdown-it";
-import markdownItMermaid from "@liradb2000/markdown-it-mermaid";
+import markdownItMermaid from "@wekanteam/markdown-it-mermaid";
 const mdi = markdownIt();
 mdi.use(markdownItMermaid);
 mdi.render(`~~~mermaid
@@ -36,7 +33,7 @@ but either `~~~` or ` ``` ` works.
 
 ```js
 import MarkdownIt from 'markdown-it';
-import MarkdownItKatex from '@liradb2000/markdown-it-mermaid';
+import MarkdownItKatex from '@wekanteam/markdown-it-mermaid';
 
 var md = MarkdownIt({
         html: false,
@@ -140,12 +137,8 @@ Change the token (like grpah TD, sequenceDiagram or something) to "mermaid"!
 \`\`\``);
 ```
 
-## Alternative packages
-
--   https://github.com/DatatracCorporation/markdown-it-mermaid
-    -   (Recommend) Supports title and more rich funcs!
-
 ## Thanks to
 
+@liradb2000
 @DatatracCorporation
 @nojaja
