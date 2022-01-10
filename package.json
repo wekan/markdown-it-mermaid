@@ -23,6 +23,6 @@
   "homepage": "https://github.com/wekan/markdown-it-mermaid#readme",
   "dependencies": {
     "@wekanteam/cli-table3": "^0.7.1",
-    "mermaid": "^8.13.6"
+    "mermaid": "^8.13.8"
   }
 }
