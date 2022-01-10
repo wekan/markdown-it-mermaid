@@ -1,3 +1,6 @@
+# 0.5.2
+-   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.13.8
+-   Update [@wekanteam/cli-table3](https://github.com/wekan/cli-table3/) 0.7.2
 # 0.5.1
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 8.13.6
 -   Update [@wekanteam/cli-table3](https://github.com/wekan/cli-table3/) 0.7.1
