@@ -1,6 +1,6 @@
 {
   "name": "@wekanteam/markdown-it-mermaid",
-  "version": "0.5.3",
+  "version": "0.5.5",
   "description": "Forked Package markdown-it-mermaid (New).",
   "main": "dist/index.js",
   "repository": {
@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/wekan/markdown-it-mermaid#readme",
   "dependencies": {
-    "@wekanteam/cli-table3": "^0.7.3",
-    "mermaid": "^8.14.0"
+    "@wekanteam/cli-table3": "^0.7.7",
+    "mermaid": "^9.1.3"
   }
 }
