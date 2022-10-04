@@ -1,3 +1,6 @@
+# 0.5.7
+-   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 2022-10-04 git commit
+    that has updated dependencies.
 # 0.5.6
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 9.1.7
 # 0.5.5
