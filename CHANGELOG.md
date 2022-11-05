@@ -1,3 +1,7 @@
+# 0.5.9
+-   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 9.2.0
+-   Update [d3-color](https://github.com/d3/d3-color) 3.1.0 at package-lock.json
+-   Update [@wekanteam/cli-table3](https://github.com/wekan/cli-table3/) 0.7.8
 # 0.5.8
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 9.1.7
 # 0.5.7
