@@ -1,3 +1,8 @@
+# 0.6.0
+[Updated dependencies](https://github.com/wekan/markdown-it-mermaid/commit/261ea73726d7228c633bbe5c1847b3b1893c142f):
+-   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 9.2.2
+-   Update [d3-color](https://github.com/d3/d3-color) 3.1.0 at package-lock.json
+-   Update [@wekanteam/cli-table3](https://github.com/wekan/cli-table3/) 0.7.9
 # 0.5.9
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 9.2.0
 -   Update [d3-color](https://github.com/d3/d3-color) 3.1.0 at package-lock.json
