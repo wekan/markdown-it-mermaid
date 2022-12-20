@@ -1,3 +1,16 @@
+# 0.6.2 2022-12-20
+[Updated dependencies](https://github.com/wekan/markdown-it-mermaid/commit/7065f6e4b3f48b0af43362d51b2c4d2366f04080):
+-   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 9.3.0
+-   Update [d3-path](https://github.com/d3/d3-path) 3.1.0
+-   Update [dompurify](https://github.com/cure53/DOMPurify) 2.4.1
+-   Added  [dagre-d3-es](https://github.com/tbo47/dagre-es) 7.0.6
+-   Added  [lodash-es](https://github.com/lodash/lodash) 4.17.21
+-   Removed dagre, dagre-d3, fast-clone, graphlib, lodash.
+-   Above dependency changes are caused by changes in newest Mermaid etc versions, done by "npm update". 
+# 0.6.1 2022-12-14
+[Updated dependencies](https://github.com/wekan/markdown-it-mermaid/commit/78e0271696958404c5b72fc53341a41f900cff5a):
+-   Update [d3](https://github.com/d3/d3-color) 7.0.0 at package-lock.json
+-   Update [@wekanteam/cli-table3](https://github.com/wekan/cli-table3/) 0.8.0
 # 0.6.0
 [Updated dependencies](https://github.com/wekan/markdown-it-mermaid/commit/261ea73726d7228c633bbe5c1847b3b1893c142f):
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 9.2.2
