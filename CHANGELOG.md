@@ -1,3 +1,5 @@
+# 0.6.3 2023-02-20
+- [Updated dependencies](https://github.com/wekan/wekan/commit/f5302108a402e0169787eddbabfffbdcec1d6714).
 # 0.6.2 2022-12-20
 [Updated dependencies](https://github.com/wekan/markdown-it-mermaid/commit/7065f6e4b3f48b0af43362d51b2c4d2366f04080):
 -   Update [Mermaid-js](https://mermaid-js.github.io/mermaid/#/) 9.3.0
