@@ -1,3 +1,5 @@
+# 0.6.4 2023-02-21
+- [Updated dependencies](https://github.com/wekan/wekan/commit/97bda00f05eb51d011e831c81f6021547437d64c).
 # 0.6.3 2023-02-20
 - [Updated dependencies](https://github.com/wekan/wekan/commit/f5302108a402e0169787eddbabfffbdcec1d6714).
 # 0.6.2 2022-12-20
